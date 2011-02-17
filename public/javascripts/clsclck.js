@@ -21,9 +21,8 @@ $(document).ready(function(){
   );
 })
 
-function clock (size) {
+function clock (radius) {
   canvas.ctx.clearRect(-canvas.width/2,-canvas.height/2,canvas.width,canvas.height);
-  var radius = size;
   var unit = radius/75;
   drawFrame(radius);
   canvas.ctx.save();
@@ -35,7 +34,6 @@ function clock (size) {
 }
 
 function drawFrame (radius) {
-  // drawCircle(radius, 1, '#FFFFFF', true);
   drawCircle(radius, radius*0.1, '#325FA2', false);
   drawPitchLines(radius*0.9, 2, 1);
   drawNumbers(radius/5, radius*0.7, '#325FA2');
