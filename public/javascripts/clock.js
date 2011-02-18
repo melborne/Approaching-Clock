@@ -8,14 +8,15 @@ $(document).ready(function(){
   
   canvas.ctx.translate(canvas.width/2, canvas.height/2);
   
-  clock(60);
-  var x = 60;
+  const min = 60;
+  var x = min;
   var sp = 2;
+  clock(x);
   setInterval(
     function(){
       clock(x);
-      if (x > canvas.width*0.6 || x < 60) { sp = -sp };
       x += sp;
+      if (x > canvas.width*0.6 || x < min) { sp = -sp };
     },
     500
   );
@@ -24,7 +25,7 @@ $(document).ready(function(){
 function clock (radius) {
   canvas.ctx.clearRect(-canvas.width/2,-canvas.height/2,canvas.width,canvas.height);
   var unit = radius/75;
-  drawFrame(radius);
+  drawFrame(radius, '#325FA2');
   canvas.ctx.save();
   canvas.ctx.rotate(-Math.PI/2); //set start angle at twelve o'clock
   drawHand('hr', radius*0.5, unit*3, unit*5, 'black');
@@ -33,10 +34,10 @@ function clock (radius) {
   canvas.ctx.restore();
 }
 
-function drawFrame (radius) {
-  drawCircle(radius, radius*0.1, '#325FA2', false);
+function drawFrame (radius, color) {
+  drawCircle(radius, radius*0.1, color, false);
   drawPitchLines(radius*0.9, 2, 1);
-  drawNumbers(radius/5, radius*0.7, '#325FA2');
+  drawNumbers(radius/5, radius*0.7, color);
 }
 
 function drawCircle (distance, width, color, filly) {

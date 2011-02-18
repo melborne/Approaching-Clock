@@ -2,9 +2,9 @@ $font_color: #D0FFD0;
 $bg_color: #325F82;
 $canvas_color: #FFFFFF;
 
-@mixin rounded($topl:8px, $topr:8px, $bottomr:8px, $bottoml:8px) {
-  border-radius: $topl $topr $bottomr $bottoml;
-  -moz-border-radius: $topl $topr $bottomr $bottoml;
+@mixin rounded($topl:32px, $topr:32px, $btmr:32px, $btml:32px) {
+  border-radius: $topl $topr $btmr $btml;
+  -moz-border-radius: $topl $topr $btmr $btml;
 }
 
 * {
@@ -17,27 +17,21 @@ body {
   color: $font_color;
   background-color: $bg_color;
   width: 1000px;
-  margin: 20px auto;
+  margin: 60px auto;
 }
 
 header {
   display:block;
 }
-#main {
 
+#main {
   canvas#clock {
-    margin-top: 50px;
     border: thin solid #444;
     background-color: $canvas_color;
     @include rounded();
   }
 }
-#side {
-  position: relative;
-  width: 200px;
-  float: right;
-  background-color: #777;
-}
+
 footer {
   display: block;
   height: 30px;
