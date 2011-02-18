@@ -3,7 +3,7 @@ require 'haml'
 require 'sass'
 
 configure do
-  APP_TITLE = "Closing Clock"
+  APP_TITLE = "Approaching Clock"
   CREDIT = ['hp12c', "http://d.hatena.ne.jp/keyesberry"]
 end
 
