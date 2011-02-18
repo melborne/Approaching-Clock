@@ -1,5 +1,4 @@
 var canvas = {};
-var x, y;
 $(document).ready(function(){
   canvas.c = $("canvas#clock");
   canvas.ctx = canvas.c[0].getContext('2d');
